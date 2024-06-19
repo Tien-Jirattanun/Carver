@@ -9,7 +9,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Create a non-root user
-ARG USERNAME=carver
+ARG USERNAME=Carver
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
