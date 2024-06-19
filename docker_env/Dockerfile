@@ -1,4 +1,4 @@
-FROM osrf/ros:humble-desktop-full
+FROM osrf/ros:humble-desktop
 
 # Example of installing programs
 RUN apt-get update \
@@ -28,5 +28,6 @@ RUN apt-get update \
 COPY bashrc /home/${USERNAME}/.bashrc
 
 # Set up entrypoint and default command
-ENTRYPOINT ["/bin/bash"]
+USER $USERNAME
+ENTRYPOINT [ "/bin/bash", "-l", "-c" ]
 CMD ["bash"]
